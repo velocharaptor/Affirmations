@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "866383566259",
+    "firebase_url": "https://jango-pnp003-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "jango-pnp003",
+    "storage_bucket": "jango-pnp003.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866383566259:android:2bebcb636aa6890c3567c6",
+        "android_client_info": {
+          "package_name": "com.example.affirmations"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "866383566259-7l7rdem8nclck7php104nmnjmvc7e31m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.affirmations",
+            "certificate_hash": "1edf618f7dd6beebd5afa2ecd965149635b3bae8"
+          }
+        },
+        {
+          "client_id": "866383566259-pjuo3l6kpflmq8ldu3ks2kc6sommcf0n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4OGJd7u9q6HlwhmXHaDd0xBhKQd59z88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "866383566259-pjuo3l6kpflmq8ldu3ks2kc6sommcf0n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

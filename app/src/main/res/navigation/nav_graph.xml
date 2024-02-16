@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/catalogFragment"
+        android:name="com.example.affirmations.feature.catalog.CatalogFragment"
+        android:label="fragment_catalog"
+        tools:layout="@layout/fragment_catalog" >
+        <action
+            android:id="@+id/action_catalogFragment_to_productListFragment"
+            app:destination="@id/productListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.example.affirmations.feature.productlist.ProductListFragment"
+        android:label="ProductListFragment"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_productListFragment_to_productCardFragment"
+            app:destination="@id/productCardFragment" />
+        <argument
+            android:name="ProductArg"
+            android:defaultValue="Hello, Product!" />
+    </fragment>
+    <fragment
+        android:id="@+id/productCardFragment"
+        android:name="com.example.affirmations.feature.productcard.ProductCardFragment"
+        android:label="ProductCardFragment"
+        tools:layout="@layout/fragment_cell" >
+        <argument
+            android:name="MyArg"
+            android:defaultValue="Hello, Android!" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.affirmations.feature.settings.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings"/>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.affirmations.feature.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.affirmations.feature.account.AccountFragment"
+        android:label="fragment_account"
+        tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.affirmations.feature.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.affirmations.feature.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+
+</navigation>

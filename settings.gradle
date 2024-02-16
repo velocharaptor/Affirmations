@@ -14,3 +14,27 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Affirmations"
 include ':app'
+
+include ':core'
+include ':core:notifications'
+include ':core:data'
+include ':core:network'
+include ':core:domain'
+include ':core:base'
+include ':core:utils'
+include ':core:featureflag'
+include ':core:preferences'
+include ':core:uikit'
+
+include ':feature:catalog'
+include ':feature:home'
+include ':feature:productcard'
+include ':feature:productlist'
+include ':feature:profile'
+include ':feature:settings'
+include ':feature:login'
+include ':feature:firebase'
+include ':feature:account'
+
+
+include ':core:navigation'
