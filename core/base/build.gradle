@@ -1,6 +1,7 @@
 plugins {
-    id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
+    alias libs.plugins.android.library
+    alias libs.plugins.kotlin.android
+
 }
 
 android {
@@ -32,15 +33,12 @@ android {
 
 dependencies {
 
-
-    def fragment_version = "1.5.7"
-
     implementation project(path: ':core:utils')
 
     //fragment
-    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+    implementation libs.androidx.fragment.ktx
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation libs.androidx.test.ext
+    androidTestImplementation libs.androidx.test.espresso.core
 }

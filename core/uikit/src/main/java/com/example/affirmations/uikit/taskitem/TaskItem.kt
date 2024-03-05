@@ -1,13 +1,14 @@
-package com.example.affirmations.uikit.button
+package com.example.affirmations.uikit.taskitem
 
 import com.detmir.recycli.adapters.RecyclerItem
 import com.detmir.recycli.annotations.RecyclerItemState
 
 @RecyclerItemState
-data class SettingsButton(
+data class TaskItem (
     val id: String,
     val title: String,
-    val action: (data: RecyclerItem) -> Unit
-) : RecyclerItem {
+    val text: String
+): RecyclerItem {
     override fun provideId() = id
 }
+

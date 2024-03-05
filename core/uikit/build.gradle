@@ -1,18 +1,18 @@
 plugins {
-    id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
-    id 'com.google.devtools.ksp'
+    alias libs.plugins.android.library
+    alias libs.plugins.kotlin.android
+    alias libs.plugins.ksp
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
 }
 
 android {
     namespace 'com.example.affirmations.uikit'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         minSdk 24
-        targetSdk 33
+        targetSdk 34
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -24,35 +24,29 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-
     implementation project("path":":core:utils")
 
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+
     //recycli
-    implementation 'com.detmir.recycli:adapters:2.1.0'
-    compileOnly 'com.detmir.recycli:annotations:2.1.0'
+    implementation libs.detmir.recycli.adapters
+    compileOnly libs.detmir.recycli.annotations
     ksp 'com.detmir.recycli:processors:2.1.0'
 
-    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    implementation libs.androidx.recycler
+    implementation libs.glide
 
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation libs.androidx.constraintlayout
 
     //material3
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation libs.android.material
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation libs.androidx.test.ext
+    androidTestImplementation libs.androidx.test.espresso.core
 }

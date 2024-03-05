@@ -1,9 +1,9 @@
 plugins {
-    id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
+    alias libs.plugins.android.library
+    alias libs.plugins.kotlin.android
     id 'kotlin-kapt'
-    id 'com.google.dagger.hilt.android'
-    id 'com.google.devtools.ksp'
+    alias libs.plugins.hilt
+    alias libs.plugins.ksp
 }
 
 android {
@@ -38,35 +38,31 @@ android {
 
 dependencies {
 
-    def lifecycle_version = "2.6.1"
-    def arch_version = "2.2.0"
-
     implementation project("path":":core:base")
     implementation project("path":":core:domain")
     implementation project("path":":core:uikit")
     implementation project("path":":core:utils")
     implementation project("path":":core:notifications")
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.11.0'
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.android.material
 
     //recycli
-    implementation 'com.detmir.recycli:adapters:2.1.0'
-    compileOnly 'com.detmir.recycli:annotations:2.1.0'
-    ksp 'com.detmir.recycli:processors:2.1.0'
+    implementation libs.detmir.recycli.adapters
+    compileOnly libs.detmir.recycli.annotations
+    ksp libs.detmir.recycli.processors
 
     //hilt-dagger
-    implementation "com.google.dagger:hilt-android:2.44"
-    kapt "com.google.dagger:hilt-compiler:2.44"
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
 
     // ViewModel
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-extensions:$arch_version"
-    def fragment_version = "1.5.7"
-    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+    implementation libs.androidx.lifecycle.extensions
+    implementation libs.androidx.fragment.ktx
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation libs.androidx.test.ext
+    androidTestImplementation libs.androidx.test.espresso.core
 }

@@ -77,7 +77,7 @@ class SettingsViewModel @Inject constructor(
         }
     }
 
-    private fun sendNotification() {
+    private fun sendNotification(data: RecyclerItem) {
         notificationManager.showNotification("Hello, world!")
     }
 

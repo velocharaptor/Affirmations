@@ -1,6 +1,6 @@
 plugins {
-    id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
+    alias libs.plugins.android.library
+    alias libs.plugins.kotlin.android
 }
 
 android {
@@ -35,16 +35,16 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.11.0'
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.android.material
 
     //firebase_auth
-    implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
-    implementation 'com.google.firebase:firebase-auth-ktx'
-    implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
+    implementation (platform(libs.firebase.bom))
+    implementation libs.firebase.auth
+    implementation libs.firebase.ui.auth
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation libs.androidx.test.ext
+    androidTestImplementation libs.androidx.test.espresso.core
 }

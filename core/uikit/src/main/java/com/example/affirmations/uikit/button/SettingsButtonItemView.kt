@@ -21,7 +21,7 @@ class SettingsButtonItemView @JvmOverloads constructor(
         button = findViewById(R.id.button_settings)
         button.setOnClickListener {
             settingsButton?.let { data->
-                data.action.invoke()
+                data.action.invoke(data)
             }
         }
     }

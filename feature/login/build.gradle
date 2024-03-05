@@ -1,9 +1,9 @@
 plugins {
-    id 'com.android.library'
-    id 'org.jetbrains.kotlin.android'
+    alias libs.plugins.android.library
+    alias libs.plugins.kotlin.android
     id 'kotlin-kapt'
-    id 'com.google.dagger.hilt.android'
-    id 'com.google.devtools.ksp'
+    alias libs.plugins.hilt
+    alias libs.plugins.ksp
 }
 
 android {
@@ -38,46 +38,39 @@ android {
 
 dependencies {
 
-    def lifecycle_version = "2.6.1"
-    def arch_version = "2.2.0"
-    def fragment_version = "1.5.7"
-
-
     implementation project("path":":core:base")
     implementation project("path":":core:domain")
     implementation project("path":":core:uikit")
     implementation project("path":":core:utils")
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.11.0'
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.android.material //1.11.0
 
     //recycli
-    implementation 'com.detmir.recycli:adapters:2.1.0'
-    compileOnly 'com.detmir.recycli:annotations:2.1.0'
-    ksp 'com.detmir.recycli:processors:2.1.0'
+    implementation libs.detmir.recycli.adapters
+    compileOnly libs.detmir.recycli.annotations
+    ksp libs.detmir.recycli.processors
 
     //hilt-dagger
-    implementation "com.google.dagger:hilt-android:2.44"
-    kapt "com.google.dagger:hilt-compiler:2.44"
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
 
     // ViewModel
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-extensions:$arch_version"
-    // Lifecycles only (without ViewModel or LiveData)
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
-    // Saved state module for ViewModel
-    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+    implementation libs.androidx.lifecycle.extensions
+    implementation libs.androidx.lifecycle.runtime.ktx
+    implementation libs.androidx.lifecycle.viewmodel.savedstate
     // Annotation processor
-    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
-    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+    kapt libs.androidx.lifecycle.compiler
+    implementation libs.androidx.fragment.ktx
 
     //firebase_auth
-    implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
-    implementation 'com.google.firebase:firebase-auth-ktx'
-    implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
+    implementation (platform(libs.firebase.bom))
+    implementation libs.firebase.auth
+    implementation libs.firebase.ui.auth
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation libs.androidx.test.ext
+    androidTestImplementation libs.androidx.test.espresso.core
 }

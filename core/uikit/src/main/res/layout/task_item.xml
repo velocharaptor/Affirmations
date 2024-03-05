@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dp"
+    android:layout_height="wrap_content"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/background_rounded_white_16"
+        android:clickable="true"
+        android:elevation="8dp"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/task_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="#000"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            tools:text="User 1" />
+
+        <TextView
+            android:id="@+id/task_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:textColor="#4A4A4A"
+            android:textSize="12dp"
+            tools:text="User 1"
+            android:maxWidth="248dp"
+            android:textAppearance="?attr/textAppearanceHeadline6"/>
+    </FrameLayout>
+
+</merge>

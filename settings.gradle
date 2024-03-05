@@ -25,6 +25,7 @@ include ':core:utils'
 include ':core:featureflag'
 include ':core:preferences'
 include ':core:uikit'
+include ':core:navigation'
 
 include ':feature:catalog'
 include ':feature:home'
@@ -37,4 +38,4 @@ include ':feature:firebase'
 include ':feature:account'
 
 
-include ':core:navigation'
+

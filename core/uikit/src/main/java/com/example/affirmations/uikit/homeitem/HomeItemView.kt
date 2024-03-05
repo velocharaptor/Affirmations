@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import com.detmir.recycli.annotations.RecyclerItemStateBinder
 import com.detmir.recycli.annotations.RecyclerItemView
 import com.example.affirmations.uikit.R
 import com.example.affirmations.uikit.ext.load
+import com.example.affirmations.utils.applyMargin
 
 @RecyclerItemView
 class HomeItemView @JvmOverloads constructor(
@@ -20,9 +22,15 @@ class HomeItemView @JvmOverloads constructor(
     private var homeItem: HomeItem? = null
 
     init {
-        LayoutInflater.from(context).inflate(R.layout.home_item, this)
-        text = findViewById(R.id.home_item_title)
-        image = findViewById(R.id.home_item_image)
+        LayoutInflater.from(context).inflate(R.layout.product_item, this)
+        layoutParams = LayoutParams(
+            LayoutParams.MATCH_PARENT,
+            LayoutParams.WRAP_CONTENT
+        )
+        applyMargin(8)
+        text = findViewById(R.id.product_title)
+        image = findViewById(R.id.product_item_image)
+
     }
 
     @RecyclerItemStateBinder

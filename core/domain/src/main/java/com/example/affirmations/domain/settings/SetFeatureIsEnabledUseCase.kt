@@ -7,6 +7,6 @@ class SetFeatureIsEnabledUseCase @Inject constructor(
 ) {
 
     suspend fun setFeatureIsEnabled(key: String, value: Boolean) {
-        repository.setFeatureIsEnabled(key, value)
+        //repository.setFeatureIsEnabled(key, value)
     }
 }

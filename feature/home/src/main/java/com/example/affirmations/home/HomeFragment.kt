@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.detmir.recycli.adapters.RecyclerConfig
 import com.detmir.recycli.adapters.bindState
 import com.example.affirmations.base.BaseFragment
 import com.example.home.databinding.FragmentHomeBinding
@@ -17,7 +19,6 @@ class HomeFragment :
     override val name: String = HomeFragment::class.java.simpleName
     private  var binding: FragmentHomeBinding? = null
     private val viewModel: HomeViewModel by viewModels()
-    //private val viewModel by viewModels<LoginViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,32 +32,14 @@ class HomeFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val recyclerView = binding?.homeRecycler?.apply {
-            layoutManager = GridLayoutManager(
-                context,
-                2
+        val recyclerView1 = binding?.homeRecycler1?.apply {
+            layoutManager = LinearLayoutManager(
+                context
             )
         }
 
         viewModel.data.observe(viewLifecycleOwner){ homeItem->
-            recyclerView?.bindState(homeItem)
+            recyclerView1?.bindState(homeItem)
         }
     }
-
-    /*private fun observeAuthenticationState() {
-        viewModel.authenticationState.observe(viewLifecycleOwner, Observer { authenticationState ->
-            when (authenticationState) {
-                LoginViewModel.AuthenticationState.AUTHENTICATED -> {
-                    binding.homeButton.setOnClickListener {
-                        findNavController().navigate(R.id.accountFragment)
-                    }
-                }
-                else -> {
-                    binding.homeButton.setOnClickListener {
-                        findNavController().navigate(R.id.loginFragment)
-                    }
-                }
-            }
-        })
-    }*/
 }

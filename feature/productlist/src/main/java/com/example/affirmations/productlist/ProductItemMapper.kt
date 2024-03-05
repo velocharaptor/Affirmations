@@ -1,5 +1,6 @@
 package com.example.affirmations.feature.productlist
 
+import com.detmir.recycli.adapters.RecyclerItem
 import com.example.affirmations.domain.product.ProductModel
 import com.example.affirmations.navigation.Nav
 import com.example.affirmations.uikit.productitem.ProductItem

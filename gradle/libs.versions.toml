@@ -1,0 +1,84 @@
+[versions]
+accompanist = "0.32.0"
+androidDesugarJdkLibs = "2.0.4"
+# AGP and tools should be updated together
+
+androidxActivity = "1.7.2"
+androidxFragment = "1.5.7"
+androidxNavigation = "2.6.0"
+androidxLifecycle = "2.6.1"
+androidxDatabinding = "7.1.2"
+googleDatatransport = "3.1.2"
+detmirRecycli = "2.2.0"
+firebaseBom = "26.0.0"
+googleMaterials = "1.10.0"
+googleLocation = "21.0.1"
+hilt = "2.44"
+androidxCore = "1.7.0"
+androidxAppCompat = "1.6.1"
+androidxConstraint = "2.1.4"
+junit4 = "4.13.2"
+androidxTestExt = "1.1.5"
+androidxEspresso = "3.5.1"
+arch_version = "2.2.0"
+#version = "unspecified" ?
+androidGradlePlugin = "7.4.2" #7.4.2
+kotlinAndroid = "1.7.20"
+googleServices = "4.4.1"
+devtools = "1.7.20-1.0.8"
+kotlinJvm = "1.7.20"
+retrofit2 = "2.9.0"
+okhttp3 = "4.7.2"
+androidxLegacy = "1.0.0"
+firebaseUi = "7.2.0"
+glide = "4.14.2"
+x-recycler = "1.3.0"
+
+[libraries]
+androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "androidxActivity" }
+androidx-databinding-runtime = { group = "androidx.databinding", name = "databinding-runtime", version.ref = "androidxDatabinding" }
+android-datatransport-runtime = { group = "com.google.android.datatransport", name = "transport-runtime", version.ref = "googleDatatransport" }
+androidx-recycler = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "x-recycler" }
+detmir-recycli-adapters = { group = "com.detmir.recycli", name = "adapters", version.ref = "detmirRecycli" }
+detmir-recycli-annotations = { group = "com.detmir.recycli", name = "annotations", version.ref = "detmirRecycli" }
+detmir-recycli-processors = { group = "com.detmir.recycli", name = "processors", version.ref = "detmirRecycli" }
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database-ktx" }
+firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging-ktx" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth-ktx" }
+firebase-ui-auth = { group = "com.firebaseui", name = "firebase-ui-auth", version.ref = "firebaseUi" }
+google-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "googleLocation" }
+android-material = { group = "com.google.android.material", name = "material", version.ref = "googleMaterials" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "androidxLifecycle" }
+androidx-lifecycle-extensions = { group = "androidx.lifecycle", name = "lifecycle-extensions", version.ref = "arch_version" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "androidxNavigation" }
+androidx-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "androidxNavigation" }
+androidx-dynamic-features-fragment = { group = "androidx.navigation", name = "navigation-dynamic-features-fragment", version.ref = "androidxNavigation" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "androidxLifecycle" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidxLifecycle" }
+androidx-lifecycle-viewmodel-savedstate = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-savedstate", version.ref = "androidxLifecycle" }
+androidx-lifecycle-compiler = { group = "androidx.lifecycle", name = "lifecycle-compiler", version.ref = "androidxNavigation" }
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "androidxFragment" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidxCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppCompat" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidxConstraint" }
+androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxEspresso" }
+androidx-test-ext = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidxTestExt" }
+retrofit2-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit2" }
+retrofit2-converter = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit2" }
+okhttp3-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp3" }
+okhttp3 = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp3" }
+androidx-legacy = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "androidxLegacy" }
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinAndroid" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+gms = { id = "com.google.gms.google-services", version.ref = "googleServices" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "devtools" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinJvm" }

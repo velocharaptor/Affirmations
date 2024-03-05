@@ -15,18 +15,19 @@
         app:navGraph="@navigation/nav_graph"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bNav"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bNav"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:backgroundTint="@color/blue"
         app:itemIconTint="@drawable/bottom_nav_colors"
         app:itemTextColor="@drawable/bottom_nav_colors"
-        app:layout_constraintBottom_toBottomOf="@+id/fragment_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_menu" />
 
 

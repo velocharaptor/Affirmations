@@ -2,9 +2,11 @@ package com.example.affirmations.feature.productlist
 
 import android.os.Bundle
 import androidx.lifecycle.*
+import com.detmir.recycli.adapters.RecyclerItem
 import com.example.affirmations.domain.product.GetProductsUseCase
 import com.example.affirmations.navigation.CatalogNav
 import com.example.affirmations.navigation.Nav
+import com.example.affirmations.uikit.button.SettingsButton
 import com.example.affirmations.uikit.productitem.ProductItem
 import com.example.affirmations.utils.Log
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,7 +20,7 @@ open class ProductListViewModel @Inject constructor(
     private val productsUseCase: GetProductsUseCase,
     private val nav: Nav
 ) : ViewModel() {
-    val data: MutableLiveData<List<ProductItem>> = MutableLiveData(emptyList())
+    val data: MutableLiveData<List<RecyclerItem>> = MutableLiveData(emptyList())
     private val mapper = ProductItemMapper(nav)
 
     init {

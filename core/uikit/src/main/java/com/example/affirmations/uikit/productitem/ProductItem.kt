@@ -13,7 +13,8 @@ data class ProductItem(
     val images: List<String>,
     val description: String,
     val price: String,
-    val toProductCard : (data: ProductItem) -> Unit
+    val button: Class<RecyclerItem>? = null,
+    val toProductCard : (data: ProductItem) -> Unit,
 ) : Parcelable, RecyclerItem {
     override fun provideId() = id
 }
