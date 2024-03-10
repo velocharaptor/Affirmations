@@ -6,7 +6,8 @@ import com.detmir.recycli.annotations.RecyclerItemState
 @RecyclerItemState
 data class ProductCardItem(
     val id: String,
-    val image: String
+    val image: String,
+    val backgroundColor: Int? = null
 ) : RecyclerItem{
     override fun provideId() = id
 }

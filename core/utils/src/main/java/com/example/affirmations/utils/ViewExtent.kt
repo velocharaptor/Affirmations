@@ -16,3 +16,7 @@ fun View.setMargins(left: Int, top: Int, right: Int, bottom: Int) {
     lp.rightMargin = DpUtils.dpToPx(right)
     lp.bottomMargin = DpUtils.dpToPx(bottom)
 }
+
+fun View.setBackground(color: Int) {
+   this.setBackgroundColor(color)
+}

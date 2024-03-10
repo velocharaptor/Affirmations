@@ -28,6 +28,9 @@ class ProductListItemView @JvmOverloads constructor(
             LayoutParams.WRAP_CONTENT
         )
         applyMargin(8)
+        productItem?.backgroundColor?.let { color ->
+            setBackgroundColor(color)
+        }
         textView = findViewById(R.id.product_title)
         imageView = findViewById(R.id.product_item_image)
         setOnClickListener {

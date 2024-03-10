@@ -8,6 +8,7 @@ import android.widget.FrameLayout
 import com.detmir.recycli.annotations.RecyclerItemStateBinder
 import com.detmir.recycli.annotations.RecyclerItemView
 import com.example.affirmations.uikit.R
+import com.example.affirmations.utils.applyMargin
 
 @RecyclerItemView
 class SettingsButtonItemView @JvmOverloads constructor(
@@ -18,6 +19,14 @@ class SettingsButtonItemView @JvmOverloads constructor(
 
     init {
         LayoutInflater.from(context).inflate(R.layout.settings_button, this)
+        layoutParams = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
+        /*layoutParams = settingsButton?.lps?.let {
+            LayoutParams(
+                it.first ?: LayoutParams.WRAP_CONTENT,
+                it.second ?: LayoutParams.WRAP_CONTENT
+            )
+        }*/
+        applyMargin(4)
         button = findViewById(R.id.button_settings)
         button.setOnClickListener {
             settingsButton?.let { data->

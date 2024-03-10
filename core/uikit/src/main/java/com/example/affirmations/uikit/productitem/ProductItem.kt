@@ -14,6 +14,7 @@ data class ProductItem(
     val description: String,
     val price: String,
     val button: Class<RecyclerItem>? = null,
+    val backgroundColor: Int? = null,
     val toProductCard : (data: ProductItem) -> Unit,
 ) : Parcelable, RecyclerItem {
     override fun provideId() = id

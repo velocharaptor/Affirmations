@@ -5,11 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.detmir.recycli.adapters.RecyclerConfig
 import com.detmir.recycli.adapters.bindState
 import com.example.affirmations.base.BaseFragment
+import com.example.affirmations.home.HomeViewModel
 import com.example.home.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
