@@ -1,22 +1,20 @@
 package com.example.affirmations.home
 
-import android.app.ActionBar.LayoutParams
-import android.graphics.Color
-import android.graphics.drawable.Drawable
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.detmir.recycli.adapters.RecyclerItem
 import com.example.affirmations.domain.home.GetHomeUseCase
-import com.example.affirmations.uikit.button.SettingsButton
+import com.example.affirmations.uikit.button.ButtonSize
+import com.example.affirmations.uikit.button.ButtonItem
 import com.example.affirmations.uikit.containeritem.ContainerItem
 import com.example.affirmations.uikit.headeritem.HeaderItem
 import com.example.affirmations.uikit.homeitem.HomeItem
 import com.example.affirmations.uikit.productcarditem.ProductCardItem
 import com.example.affirmations.uikit.taskitem.TaskItem
 import com.example.affirmations.utils.resmanager.ResManager
-import com.example.home.R
+import com.example.affirmations.uikit.R as uikitR
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -151,8 +149,8 @@ class HomeViewModel @Inject constructor(
             ),
             ProductCardItem(
                 id = "ITEM1",
-                image = "https://delasign.com/delasignBlack.png"
-                //backgroundColor = resManager.getColor(Color.blue(255))
+                image = "https://delasign.com/delasignBlack.png",
+                backgroundColor = resManager.getColor(uikitR.color.background)
             ),
             HomeItem(
                 id = "ITEM2",
@@ -162,20 +160,20 @@ class HomeViewModel @Inject constructor(
             ContainerItem(
                 id = "banner3",
                 recyclerState = (0..2).map { tmp ->
-                    SettingsButton(
+                    ButtonItem(
                         id = "$tmp",
                         title = "Button$tmp",
-                        action = ::click
-                        //lps = Pair(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
+                        action = ::click,
+                        size = ButtonSize.SMALL
                     )
                 }
             ),
-            /*SettingsButton(
+            ButtonItem(
               id = "",
               title = "BIG BUTTON",
-              action = ::click
-              //lps = Pair(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
-            ),*/
+              action = ::click,
+              size = ButtonSize.BIG
+            ),
             ProductCardItem(
                 id = "ITEM3",
                 image = "https://delasign.com/delasignBlack.png"

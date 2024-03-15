@@ -8,7 +8,7 @@ import com.detmir.recycli.adapters.RecyclerItem
 import com.example.affirmations.core.notifications.NotificationsManager
 import com.example.affirmations.domain.settings.GetSettingsListUseCase
 import com.example.affirmations.domain.settings.SetFeatureIsEnabledUseCase
-import com.example.affirmations.uikit.button.SettingsButton
+import com.example.affirmations.uikit.button.ButtonItem
 import com.example.affirmations.uikit.settingsitem.SettingsItem
 import com.example.affirmations.utils.Log
 import com.example.affirmations.utils.resmanager.ResManager
@@ -51,7 +51,7 @@ class SettingsViewModel @Inject constructor(
                         )
                     }
                     list.add(
-                        SettingsButton(
+                        ButtonItem(
                             id = "Notification_Button",
                             title = "Send notification",
                             action = ::sendNotification

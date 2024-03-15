@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--theme-->
+    <color name="primary">#E0F7FA</color>
+    <color name="primary_variant">#90CAF9</color>
+    <color name="secondary">#C5E1A5</color>
+    <color name="on_primary">#2196F3</color>
+    <color name="on_error">#F44336</color>
+    <color name="background">#FFFFFF</color>
+
+    <color name="bottom_nav_selected_item">#FFFFFF</color>
+    <color name="bottom_nav_item">#2196F3</color>
+</resources>

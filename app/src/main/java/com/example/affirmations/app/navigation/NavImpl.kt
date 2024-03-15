@@ -6,7 +6,7 @@ import com.example.affirmations.navigation.CatalogNav
 import com.example.affirmations.navigation.NavHostProvider
 import com.example.affirmations.R
 import com.example.affirmations.navigation.Nav
-import com.example.affirmations.uikit.productitem.ProductItem
+import com.example.affirmations.navigation.transportmodel.ProductItemTransport
 import javax.inject.Inject
 
 class NavImpl @Inject constructor(
@@ -17,7 +17,7 @@ class NavImpl @Inject constructor(
         navigation(R.id.productListFragment, bundle)
     }
 
-    override fun navToProductCard(productItem: ProductItem) {
+    override fun navToProductCard(productItem: ProductItemTransport) {
         val bundle = bundleOf(CatalogNav.PRODUCT_KEY to productItem)
         navigation(R.id.productCardFragment, bundle)
     }

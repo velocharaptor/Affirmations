@@ -6,7 +6,7 @@ import com.detmir.recycli.adapters.RecyclerItem
 import com.example.affirmations.domain.product.GetProductsUseCase
 import com.example.affirmations.navigation.CatalogNav
 import com.example.affirmations.navigation.Nav
-import com.example.affirmations.uikit.button.SettingsButton
+import com.example.affirmations.productlist.ProductItemMapper
 import com.example.affirmations.uikit.productitem.ProductItem
 import com.example.affirmations.utils.Log
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -18,10 +18,10 @@ import javax.inject.Inject
 @HiltViewModel
 open class ProductListViewModel @Inject constructor(
     private val productsUseCase: GetProductsUseCase,
-    private val nav: Nav
+    private val nav: Nav,
+    private val mapper: ProductItemMapper
 ) : ViewModel() {
     val data: MutableLiveData<List<RecyclerItem>> = MutableLiveData(emptyList())
-    private val mapper = ProductItemMapper(nav)
 
     init {
         Log.log(TAG, "init")

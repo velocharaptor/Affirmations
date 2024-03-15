@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.detmir.recycli.adapters.bindState
 import com.example.affirmations.base.BaseFragment
+import com.example.affirmations.productcard.ProductCardViewModel
 import com.example.productcard.databinding.FragmentCellBinding
 import dagger.hilt.android.AndroidEntryPoint
 
