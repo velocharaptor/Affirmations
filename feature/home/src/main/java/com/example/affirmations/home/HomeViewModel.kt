@@ -9,9 +9,12 @@ import com.example.affirmations.domain.home.GetHomeUseCase
 import com.example.affirmations.uikit.button.ButtonSize
 import com.example.affirmations.uikit.button.ButtonItem
 import com.example.affirmations.uikit.containeritem.ContainerItem
+import com.example.affirmations.uikit.discountprice.DiscountPriceItem
 import com.example.affirmations.uikit.headeritem.HeaderItem
 import com.example.affirmations.uikit.homeitem.HomeItem
+import com.example.affirmations.uikit.priceitem.PriceItem
 import com.example.affirmations.uikit.productcarditem.ProductCardItem
+import com.example.affirmations.uikit.productitem.ProductItem
 import com.example.affirmations.uikit.taskitem.TaskItem
 import com.example.affirmations.utils.resmanager.ResManager
 import com.example.affirmations.uikit.R as uikitR
@@ -38,73 +41,6 @@ class HomeViewModel @Inject constructor(
                 data.value = recyclerItem
             }
         }
-        /* val list: MutableList<RecyclerItem> = mutableListOf()
-         list.add(
-             ContainerItem(
-                 id = "banner1",
-                 recyclerState = (0..3).map { taskItem ->
-                     TaskItem(
-                         id = "TASK$taskItem",
-                         title = "task $taskItem",
-                         text = "some text..."
-                     )
-                 }
-             )
-         )
-         list.add(
-             HeaderItem(
-                 id = "Header_1",
-                 title = "Header 1"
-             )
-         )
-         list.add(
-             ContainerItem(id = "banner2",
-                 recyclerState = (0..7).map { homeItem ->
-                     HomeItem(
-                         id = "ID$homeItem",
-                         title = "title $homeItem",
-                         images = "https://delasign.com/delasignBlack.png"
-                     )
-                 }
-             )
-         )
-         list.add(
-             HeaderItem(
-                 id = "Header_2",
-                 title = "Header 2"
-             )
-         )
-         list.add(
-             ContainerItem(id = "banner2",
-                 recyclerState = (0..5).map { homeItem ->
-                     HomeItem(
-                         id = "ID$homeItem",
-                         title = "title $homeItem",
-                         images = "https://delasign.com/delasignBlack.png"
-                     )
-                 }
-             )
-         )
-         list.add(
-             ProductCardItem(
-                 id = "ITEM1",
-                 image = "https://delasign.com/delasignBlack.png"
-             )
-         )
-         list.add(
-             HomeItem(
-                 id = "ITEM2",
-                 title = "HomeItem",
-                 images = "https://delasign.com/delasignBlack.png"
-             )
-         )
-         list.add(
-             ProductCardItem(
-                 id = "ITEM3",
-                 image = "https://delasign.com/delasignBlack.png"
-             )
-         ) */
-        //data.value = list
     }
 
     private fun getList(): List<RecyclerItem> {
@@ -121,7 +57,7 @@ class HomeViewModel @Inject constructor(
             ),
             HeaderItem(
                 id = "Header_1",
-                title = "Header 1"
+                title = "Horizontal recycler"
             ),
             ContainerItem(
                 id = "banner2",
@@ -135,17 +71,7 @@ class HomeViewModel @Inject constructor(
             ),
             HeaderItem(
                 id = "Header_2",
-                title = "Header 2"
-            ),
-            ContainerItem(
-                id = "banner2",
-                recyclerState = (0..5).map { homeItem ->
-                    HomeItem(
-                        id = "ID$homeItem",
-                        title = "title $homeItem",
-                        images = "https://delasign.com/delasignBlack.png"
-                    )
-                }
+                title = "Some Items"
             ),
             ProductCardItem(
                 id = "ITEM1",
@@ -156,6 +82,10 @@ class HomeViewModel @Inject constructor(
                 id = "ITEM2",
                 title = "HomeItem",
                 images = "https://delasign.com/delasignBlack.png"
+            ),
+            HeaderItem(
+                id = "Header_3",
+                title = "Buttons"
             ),
             ContainerItem(
                 id = "banner3",
@@ -169,10 +99,57 @@ class HomeViewModel @Inject constructor(
                 }
             ),
             ButtonItem(
-              id = "",
-              title = "BIG BUTTON",
-              action = ::click,
-              size = ButtonSize.BIG
+                id = "",
+                title = "BIG BUTTON",
+                action = ::click,
+                size = ButtonSize.BIG
+            ),
+            HeaderItem(
+                id = "Header_4",
+                title = "Prices"
+            ),
+            PriceItem(
+                id = "Price",
+                text = "2000",
+                color = resManager.getColor(uikitR.color.black),
+                size = "23".toFloat()
+            ),
+            DiscountPriceItem(
+                id = "discount price",
+                price = "2000",
+                newPrice = "1899",
+                colorPrice = resManager.getColor(uikitR.color.black),
+                colorNewPrice = resManager.getColor(uikitR.color.on_error),
+                sizePrice = "23".toFloat(),
+                sizeNewPrice = "35".toFloat()
+            ),
+            HeaderItem(
+                id = "Header_5",
+                title = "Product Item"
+            ),
+            ProductItem(
+                title = "Product Name",
+                images = listOf("https://delasign.com/delasignBlack.png"),
+                description =  " bla bla",
+                price = "2000",
+                id = "Product Name",
+                toProductCard = ::click,
+                button = ButtonItem(
+                    id = "Product Name",
+                    title = "toBucket",
+                    size = ButtonSize.SMALL,
+                    action = ::click
+                ),
+                priceDiscountTitle = DiscountPriceItem(
+                    id = "Price name",
+                    price = "2000",
+                    newPrice = "1899",
+                    colorPrice = resManager.getColor(uikitR.color.black),
+                    colorNewPrice = resManager.getColor(uikitR.color.on_error),
+                    sizePrice = "23".toFloat(),
+                    sizeNewPrice = "35".toFloat()
+                )
+
             ),
             ProductCardItem(
                 id = "ITEM3",

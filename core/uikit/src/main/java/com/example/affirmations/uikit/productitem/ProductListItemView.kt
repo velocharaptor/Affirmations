@@ -13,6 +13,7 @@ import com.detmir.recycli.annotations.RecyclerItemStateBinder
 import com.detmir.recycli.annotations.RecyclerItemView
 import com.example.affirmations.uikit.R
 import com.example.affirmations.uikit.button.ButtonItemView
+import com.example.affirmations.uikit.discountprice.DiscountPriceItemView
 import com.example.affirmations.uikit.ext.load
 import com.example.affirmations.utils.applyMargin
 
@@ -26,6 +27,9 @@ class ProductListItemView @JvmOverloads constructor(
     private val backgroundView: View
     private val button: ButtonItemView
 
+    //private val priceItem: PriceItemView
+    private val priceDiscountItem: DiscountPriceItemView
+
     init {
         LayoutInflater.from(context).inflate(R.layout.product_item, this)
         backgroundView = findViewById<ConstraintLayout>(R.id.product_item_background_layout)
@@ -36,6 +40,8 @@ class ProductListItemView @JvmOverloads constructor(
         textView = findViewById(R.id.product_title)
         imageView = findViewById(R.id.product_item_image)
         button = findViewById(R.id.product_item_button)
+        //priceItem = findViewById(R.id.product_item_price)
+        priceDiscountItem = findViewById(R.id.product_item_price)
         setOnClickListener {
             productItem?.let { data ->
                 data.toProductCard.invoke(data)
@@ -50,6 +56,10 @@ class ProductListItemView @JvmOverloads constructor(
         imageView.load(productItem.images.getOrNull(0))
 
         button.bindState(productItem.button)
+
+        productItem.priceDiscountTitle?.let { item ->
+            priceDiscountItem.bindState(item)
+        }
 
         productItem.backgroundColor?.let { color ->
             backgroundView.setBackgroundColor(color)

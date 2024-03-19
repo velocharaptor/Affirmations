@@ -31,12 +31,9 @@ class ProductCardFragment :
 
     @Suppress("DEPRECATION")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val recyclerView = binding?.recyclerImage?.apply {
-            setHasFixedSize(true)
+        val recyclerView = binding?.productCardRecycler?.apply {
             layoutManager = LinearLayoutManager(
-                context,
-                LinearLayoutManager.HORIZONTAL,
-                false
+                context
             )
         }
 
@@ -44,14 +41,8 @@ class ProductCardFragment :
             viewModel.setArguments(it)
         }
 
-        viewModel.data.observe(viewLifecycleOwner) { productItem ->
-            binding?.titleCell?.text = productItem.title
-            binding?.price?.text = productItem.price
-            binding?.descriptionCell?.text = Html.fromHtml(productItem.description)
-        }
-
-        viewModel.imagesData.observe(viewLifecycleOwner) { imageCardItem->
-            recyclerView?.bindState(imageCardItem)
+        viewModel.dataState.observe(viewLifecycleOwner) { item->
+            recyclerView?.bindState(item)
         }
     }
 

@@ -22,14 +22,14 @@ class HomeItemView @JvmOverloads constructor(
     private var homeItem: HomeItem? = null
 
     init {
-        LayoutInflater.from(context).inflate(R.layout.product_item, this)
+        LayoutInflater.from(context).inflate(R.layout.home_item, this)
         layoutParams = LayoutParams(
             LayoutParams.MATCH_PARENT,
             LayoutParams.WRAP_CONTENT
         )
         applyMargin(8)
-        text = findViewById(R.id.product_title)
-        image = findViewById(R.id.product_item_image)
+        text = findViewById(R.id.home_title)
+        image = findViewById(R.id.home_item_image)
 
     }
 

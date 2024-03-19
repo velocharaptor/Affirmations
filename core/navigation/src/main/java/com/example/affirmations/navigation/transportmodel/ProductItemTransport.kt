@@ -9,5 +9,6 @@ class ProductItemTransport(
     val title: String,
     val images: List<String>,
     val description: String,
-    val price: String
+    val price: String,
+    val discount: String? = null
 ) : Parcelable
