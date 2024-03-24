@@ -1,7 +1,8 @@
-package com.example.affirmations.utils
+package com.example.affirmations.utils.ext
 
 import android.view.View
 import android.view.ViewGroup
+import com.example.affirmations.utils.DpUtils
 
 fun View.applyMargin(margin: Int) {
     this.setMargins(margin, margin, margin, margin)

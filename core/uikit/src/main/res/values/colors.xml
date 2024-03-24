@@ -9,6 +9,7 @@
     <color name="background">#FFFFFF</color>
     <color name="item_background">#657CFB</color>
     <color name="black">#000000</color>
+    <color name="grey">#FFFFFF</color>
 
     <color name="bottom_nav_selected_item">#FFFFFF</color>
     <color name="bottom_nav_item">#2196F3</color>

@@ -39,7 +39,6 @@ dependencies {
     ksp 'com.detmir.recycli:processors:2.1.0'
 
     implementation libs.androidx.recycler
-    implementation libs.glide
 
     implementation libs.androidx.constraintlayout
 

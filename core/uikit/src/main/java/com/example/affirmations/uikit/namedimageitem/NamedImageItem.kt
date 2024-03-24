@@ -1,13 +1,13 @@
-package com.example.affirmations.uikit.productcarditem
+package com.example.affirmations.uikit.namedimageitem
 
 import com.detmir.recycli.adapters.RecyclerItem
 import com.detmir.recycli.annotations.RecyclerItemState
 
 @RecyclerItemState
-data class ProductCardItem(
+data class NamedImageItem(
     val id: String,
-    val image: String,
-    val backgroundColor: Int? = null
-) : RecyclerItem{
+    val title: String,
+    val image: String
+) : RecyclerItem {
     override fun provideId() = id
 }

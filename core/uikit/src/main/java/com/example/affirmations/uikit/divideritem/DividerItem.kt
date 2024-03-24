@@ -1,13 +1,12 @@
-package com.example.affirmations.uikit.homeitem
+package com.example.affirmations.uikit.divideritem
 
 import com.detmir.recycli.adapters.RecyclerItem
 import com.detmir.recycli.annotations.RecyclerItemState
 
 @RecyclerItemState
-data class HomeItem(
+data class DividerItem(
     val id: String,
-    val title: String,
-    val images: String
+    val color: Int?
 ) : RecyclerItem {
-    override fun provideId() = id
+        override fun provideId() = id
 }

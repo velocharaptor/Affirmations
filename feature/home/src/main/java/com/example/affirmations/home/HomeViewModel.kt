@@ -9,11 +9,10 @@ import com.example.affirmations.domain.home.GetHomeUseCase
 import com.example.affirmations.uikit.button.ButtonSize
 import com.example.affirmations.uikit.button.ButtonItem
 import com.example.affirmations.uikit.containeritem.ContainerItem
-import com.example.affirmations.uikit.discountprice.DiscountPriceItem
-import com.example.affirmations.uikit.headeritem.HeaderItem
-import com.example.affirmations.uikit.homeitem.HomeItem
+import com.example.affirmations.uikit.divideritem.DividerItem
 import com.example.affirmations.uikit.priceitem.PriceItem
-import com.example.affirmations.uikit.productcarditem.ProductCardItem
+import com.example.affirmations.uikit.headeritem.HeaderItem
+import com.example.affirmations.uikit.namedimageitem.NamedImageItem
 import com.example.affirmations.uikit.productitem.ProductItem
 import com.example.affirmations.uikit.taskitem.TaskItem
 import com.example.affirmations.utils.resmanager.ResManager
@@ -55,6 +54,10 @@ class HomeViewModel @Inject constructor(
                     )
                 }
             ),
+            DividerItem(
+                id = "divider1",
+                color = null
+            ),
             HeaderItem(
                 id = "Header_1",
                 title = "Horizontal recycler"
@@ -62,26 +65,34 @@ class HomeViewModel @Inject constructor(
             ContainerItem(
                 id = "banner2",
                 recyclerState = (0..7).map { homeItem ->
-                    HomeItem(
+                    NamedImageItem(
                         id = "ID$homeItem",
                         title = "title $homeItem",
-                        images = "https://delasign.com/delasignBlack.png"
+                        image = "https://delasign.com/delasignBlack.png"
                     )
                 }
+            ),
+            DividerItem(
+                id = "divider1",
+                color = null
             ),
             HeaderItem(
                 id = "Header_2",
                 title = "Some Items"
             ),
-            ProductCardItem(
+            NamedImageItem(
                 id = "ITEM1",
-                image = "https://delasign.com/delasignBlack.png",
-                backgroundColor = resManager.getColor(uikitR.color.background)
+                title = "",
+                image = "https://delasign.com/delasignBlack.png"
             ),
-            HomeItem(
+            NamedImageItem(
                 id = "ITEM2",
                 title = "HomeItem",
-                images = "https://delasign.com/delasignBlack.png"
+                image = "https://delasign.com/delasignBlack.png"
+            ),
+            DividerItem(
+                id = "divider1",
+                color = null
             ),
             HeaderItem(
                 id = "Header_3",
@@ -104,24 +115,35 @@ class HomeViewModel @Inject constructor(
                 action = ::click,
                 size = ButtonSize.BIG
             ),
+            DividerItem(
+                id = "divider1",
+                color = null
+            ),
             HeaderItem(
                 id = "Header_4",
                 title = "Prices"
             ),
             PriceItem(
-                id = "Price",
-                text = "2000",
-                color = resManager.getColor(uikitR.color.black),
-                size = "23".toFloat()
-            ),
-            DiscountPriceItem(
                 id = "discount price",
-                price = "2000",
+                oldPrice = "2000",
                 newPrice = "1899",
                 colorPrice = resManager.getColor(uikitR.color.black),
                 colorNewPrice = resManager.getColor(uikitR.color.on_error),
                 sizePrice = "23".toFloat(),
                 sizeNewPrice = "35".toFloat()
+            ),
+            PriceItem(
+                id = "discount price",
+                oldPrice = "2000",
+                newPrice = null,
+                colorPrice = resManager.getColor(uikitR.color.black),
+                colorNewPrice = resManager.getColor(uikitR.color.on_error),
+                sizePrice = "23".toFloat(),
+                sizeNewPrice = "35".toFloat()
+            ),
+            DividerItem(
+                id = "divider1",
+                color = null
             ),
             HeaderItem(
                 id = "Header_5",
@@ -130,7 +152,7 @@ class HomeViewModel @Inject constructor(
             ProductItem(
                 title = "Product Name",
                 images = listOf("https://delasign.com/delasignBlack.png"),
-                description =  " bla bla",
+                description = " bla bla",
                 price = "2000",
                 id = "Product Name",
                 toProductCard = ::click,
@@ -140,9 +162,9 @@ class HomeViewModel @Inject constructor(
                     size = ButtonSize.SMALL,
                     action = ::click
                 ),
-                priceDiscountTitle = DiscountPriceItem(
+                priceView = PriceItem(
                     id = "Price name",
-                    price = "2000",
+                    oldPrice = "2000",
                     newPrice = "1899",
                     colorPrice = resManager.getColor(uikitR.color.black),
                     colorNewPrice = resManager.getColor(uikitR.color.on_error),
@@ -151,8 +173,13 @@ class HomeViewModel @Inject constructor(
                 )
 
             ),
-            ProductCardItem(
+            DividerItem(
+                id = "divider1",
+                color = null
+            ),
+            NamedImageItem(
                 id = "ITEM3",
+                title = "",
                 image = "https://delasign.com/delasignBlack.png"
             )
         )

@@ -1,10 +1,10 @@
-package com.example.affirmations.uikit.descriptionitem
+package com.example.affirmations.uikit.longtextitem
 
 import com.detmir.recycli.adapters.RecyclerItem
 import com.detmir.recycli.annotations.RecyclerItemState
 
 @RecyclerItemState
-data class DescriptionItem (
+data class LongTextItem(
     val id: String,
     val text: String,
     val size: Float? = null,

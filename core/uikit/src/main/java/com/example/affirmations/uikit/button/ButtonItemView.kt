@@ -8,7 +8,7 @@ import android.widget.FrameLayout
 import com.detmir.recycli.annotations.RecyclerItemStateBinder
 import com.detmir.recycli.annotations.RecyclerItemView
 import com.example.affirmations.uikit.R
-import com.example.affirmations.utils.applyMargin
+import com.example.affirmations.utils.ext.applyMargin
 
 @RecyclerItemView
 class ButtonItemView @JvmOverloads constructor(
@@ -31,13 +31,13 @@ class ButtonItemView @JvmOverloads constructor(
     }
 
     @RecyclerItemStateBinder
-    fun bindState(settingsButton: ButtonItem) {
-        this.settingsButton = settingsButton
-        button.text = settingsButton.title
-
-        setSize(settingsButton.size)
+    fun bindState(state: ButtonItem) {
+        settingsButton = state
+        button.text = state.title
+        setSize(state.size)
     }
 
+    //todo вполне можно вынести в общий метод для всех вьюх
     private fun setSize(size: ButtonSize) {
          when (size) {
             ButtonSize.BIG -> {

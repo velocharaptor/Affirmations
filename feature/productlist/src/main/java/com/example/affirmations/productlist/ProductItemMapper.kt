@@ -8,7 +8,7 @@ import com.example.affirmations.navigation.transportmodel.ProductItemTransport
 import com.example.affirmations.uikit.R
 import com.example.affirmations.uikit.button.ButtonItem
 import com.example.affirmations.uikit.button.ButtonSize
-import com.example.affirmations.uikit.discountprice.DiscountPriceItem
+import com.example.affirmations.uikit.priceitem.PriceItem
 import com.example.affirmations.uikit.productitem.ProductItem
 import com.example.affirmations.utils.resmanager.ResManager
 import javax.inject.Inject
@@ -34,21 +34,16 @@ class ProductItemMapper @Inject constructor(
                     size = ButtonSize.SMALL,
                     action = ::clickToBucket
                 ),
-                priceDiscountTitle = DiscountPriceItem(
+                priceView = PriceItem(
                     id = it.title ?: "Price name",
-                    price = it.price?.price ?: "error price",
+                    oldPrice = it.price?.price ?: "error price",
                     newPrice = "2000",
                     colorPrice = resManager.getColor(R.color.black),
                     colorNewPrice = resManager.getColor(R.color.on_error),
                     sizePrice = "23".toFloat(),
                     sizeNewPrice = "35".toFloat()
                 )
-                /*priceTitle = PriceItem(
-                        id = it.title ?: "Price name",
-                        text = it.price?.price ?: "error price",
-                        color = resManager.getColor(uikitR.color.black),
-                        size = "23".toFloat()
-                )*/
+
             )
         }
     }

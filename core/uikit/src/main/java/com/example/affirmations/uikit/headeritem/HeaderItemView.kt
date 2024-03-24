@@ -8,20 +8,21 @@ import android.widget.TextView
 import com.detmir.recycli.annotations.RecyclerItemStateBinder
 import com.detmir.recycli.annotations.RecyclerItemView
 import com.example.affirmations.uikit.R
+import com.example.affirmations.utils.ext.setOptionalText
 
 @RecyclerItemView
 class HeaderItemView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr){
-    private val title: TextView
+    private val titleView: TextView
 
     init {
         LayoutInflater.from(context).inflate(R.layout.header_item, this)
-        title = findViewById(R.id.header_title)
+        titleView = findViewById(R.id.header_title)
     }
 
     @RecyclerItemStateBinder
-    fun bindState(headerItem: HeaderItem) {
-        title.text = headerItem.title
+    fun bindState(state: HeaderItem) {
+        titleView.text = state.title
     }
 }

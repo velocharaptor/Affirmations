@@ -1,4 +1,4 @@
-package com.example.affirmations.feature.home
+package com.example.affirmations.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,6 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.detmir.recycli.adapters.bindState
 import com.example.affirmations.base.BaseFragment
-import com.example.affirmations.home.HomeViewModel
 import com.example.home.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -4,12 +4,14 @@ import com.detmir.recycli.adapters.RecyclerItem
 import com.detmir.recycli.annotations.RecyclerItemState
 
 @RecyclerItemState
-data class PriceItem(
+class PriceItem(
     val id: String,
-    val text: String,
-    val color: Int? = null,
-    val size: Float? = null,
-    val textStyle: String? = null
-    ) : RecyclerItem {
+    val oldPrice: String? = null,
+    val newPrice: String? = null,
+    val colorPrice: Int? = null,
+    val colorNewPrice: Int? = null,
+    val sizePrice: Float? = null,
+    val sizeNewPrice: Float? = null,
+) : RecyclerItem {
     override fun provideId() = id
 }

@@ -1,4 +1,4 @@
-package com.example.affirmations.uikit.ext
+package com.example.affirmations.utils.ext
 
 import android.widget.ImageView
 import com.bumptech.glide.Glide

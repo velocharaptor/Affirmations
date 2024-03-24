@@ -14,18 +14,18 @@ import com.example.affirmations.uikit.headeritem.HeaderItem
 class TaskItemView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr){
-    private val title: TextView
-    private val text: TextView
+    private val titleView: TextView
+    private val textView: TextView
 
     init {
         LayoutInflater.from(context).inflate(R.layout.task_item, this)
-        title = findViewById(R.id.task_title)
-        text = findViewById(R.id.task_text)
+        titleView = findViewById(R.id.task_title)
+        textView = findViewById(R.id.task_text)
     }
 
     @RecyclerItemStateBinder
     fun bindState(taskItem: TaskItem) {
-        title.text = taskItem.title
-        text.text = taskItem.text
+        titleView.text = taskItem.title
+        textView.text = taskItem.text
     }
 }

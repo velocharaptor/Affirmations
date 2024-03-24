@@ -41,7 +41,7 @@ class ProductCardFragment :
             viewModel.setArguments(it)
         }
 
-        viewModel.dataState.observe(viewLifecycleOwner) { item->
+        viewModel.dataState.observe(viewLifecycleOwner) { item ->
             recyclerView?.bindState(item)
         }
     }

@@ -9,11 +9,11 @@ import com.example.affirmations.navigation.CatalogNav
 import com.example.affirmations.navigation.transportmodel.ProductItemTransport
 import com.example.affirmations.uikit.R
 import com.example.affirmations.uikit.containeritem.ContainerItem
-import com.example.affirmations.uikit.descriptionitem.DescriptionItem
-import com.example.affirmations.uikit.discountprice.DiscountPriceItem
-import com.example.affirmations.uikit.headeritem.HeaderItem
+import com.example.affirmations.uikit.divideritem.DividerItem
+import com.example.affirmations.uikit.longtextitem.LongTextItem
 import com.example.affirmations.uikit.priceitem.PriceItem
-import com.example.affirmations.uikit.productcarditem.ProductCardItem
+import com.example.affirmations.uikit.headeritem.HeaderItem
+import com.example.affirmations.uikit.namedimageitem.NamedImageItem
 import com.example.affirmations.utils.Log
 import com.example.affirmations.utils.resmanager.ResManager
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -37,8 +37,9 @@ class ProductCardViewModel @Inject constructor(
                 ContainerItem(
                     id = "image_recycler",
                     recyclerState = productItem.images.mapIndexed { index, image ->
-                        ProductCardItem(
+                        NamedImageItem(
                             id = index.toString(),
+                            title = "",
                             image = image
                         )
                     }
@@ -50,32 +51,33 @@ class ProductCardViewModel @Inject constructor(
                     title = productItem.title
                 )
             )
-            if(productItem.discount == null) {
-                list.add(
-                    PriceItem(
-                        id = productItem.id,
-                        text = productItem.price,
-                        color = resManager.getColor(R.color.black),
-                        size = "23".toFloat()
-                    )
-                )
-            } else {
-                list.add(
-                    DiscountPriceItem(
-                        id = productItem.id,
-                        price = productItem.price,
-                        newPrice = productItem.discount!!, // как нормально обернуть?? todo
-                        colorPrice = resManager.getColor(R.color.black),
-                        colorNewPrice = resManager.getColor(R.color.on_error),
-                        sizePrice = "23".toFloat(),
-                        sizeNewPrice = "35".toFloat()
-                    )
-                )
-            }
             list.add(
-                DescriptionItem(
+                PriceItem(
                     id = productItem.id,
-                    text = convertHtmlToPlaintextWithTags( productItem.description)
+                    oldPrice = productItem.price,
+                    newPrice = productItem.discount!!, // как нормально обернуть?? todo
+                    colorPrice = resManager.getColor(R.color.black),
+                    colorNewPrice = resManager.getColor(R.color.on_error),
+                    sizePrice = "23".toFloat(),
+                    sizeNewPrice = "35".toFloat()
+                )
+            )
+            list.add(
+                DividerItem(
+                    id = productItem.id,
+                    color = null
+                )
+            )
+            list.add(
+                LongTextItem(
+                    id = productItem.id,
+                    text = convertHtmlToPlaintextWithTags(productItem.description)
+                )
+            )
+            list.add(
+                DividerItem(
+                    id = productItem.id,
+                    color = null
                 )
             )
             list.add(

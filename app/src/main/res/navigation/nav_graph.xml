@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/catalogFragment"
-        android:name="com.example.affirmations.feature.catalog.CatalogFragment"
+        android:name="com.example.affirmations.catalog.CatalogFragment"
         android:label="fragment_catalog"
         tools:layout="@layout/fragment_catalog" >
         <action
@@ -42,7 +42,7 @@
         tools:layout="@layout/fragment_settings"/>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.affirmations.feature.home.HomeFragment"
+        android:name="com.example.affirmations.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment

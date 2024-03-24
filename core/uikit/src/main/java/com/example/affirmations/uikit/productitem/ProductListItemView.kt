@@ -3,9 +3,6 @@ package com.example.affirmations.uikit.productitem
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -13,9 +10,8 @@ import com.detmir.recycli.annotations.RecyclerItemStateBinder
 import com.detmir.recycli.annotations.RecyclerItemView
 import com.example.affirmations.uikit.R
 import com.example.affirmations.uikit.button.ButtonItemView
-import com.example.affirmations.uikit.discountprice.DiscountPriceItemView
-import com.example.affirmations.uikit.ext.load
-import com.example.affirmations.utils.applyMargin
+import com.example.affirmations.uikit.priceitem.PriceItemView
+import com.example.affirmations.utils.ext.load
 
 @RecyclerItemView
 class ProductListItemView @JvmOverloads constructor(
@@ -24,24 +20,22 @@ class ProductListItemView @JvmOverloads constructor(
     private val textView: TextView
     private val imageView: ImageView
     private var productItem: ProductItem? = null
-    private val backgroundView: View
     private val button: ButtonItemView
-
-    //private val priceItem: PriceItemView
-    private val priceDiscountItem: DiscountPriceItemView
+    private val priceItem: PriceItemView
 
     init {
         LayoutInflater.from(context).inflate(R.layout.product_item, this)
-        backgroundView = findViewById<ConstraintLayout>(R.id.product_item_background_layout)
+
         layoutParams = LayoutParams(
             LayoutParams.MATCH_PARENT,
             LayoutParams.MATCH_PARENT
         )
+
         textView = findViewById(R.id.product_title)
         imageView = findViewById(R.id.product_item_image)
         button = findViewById(R.id.product_item_button)
-        //priceItem = findViewById(R.id.product_item_price)
-        priceDiscountItem = findViewById(R.id.product_item_price)
+        priceItem = findViewById(R.id.product_item_price)
+
         setOnClickListener {
             productItem?.let { data ->
                 data.toProductCard.invoke(data)
@@ -50,19 +44,15 @@ class ProductListItemView @JvmOverloads constructor(
     }
 
     @RecyclerItemStateBinder
-    fun bindState(productItem: ProductItem) {
-        this.productItem = productItem
-        textView.text = productItem.title
-        imageView.load(productItem.images.getOrNull(0))
+    fun bindState(state: ProductItem) {
+        productItem = state
 
-        button.bindState(productItem.button)
+        textView.text = state.title
+        imageView.load(state.images.getOrNull(0))
 
-        productItem.priceDiscountTitle?.let { item ->
-            priceDiscountItem.bindState(item)
-        }
-
-        productItem.backgroundColor?.let { color ->
-            backgroundView.setBackgroundColor(color)
+        button.bindState(state.button)
+        state.priceView?.let { item ->
+            priceItem.bindState(item)
         }
     }
 }

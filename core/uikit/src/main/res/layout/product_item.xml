@@ -39,7 +39,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/product_item_button"/>
 
-        <com.example.affirmations.uikit.discountprice.DiscountPriceItemView
+        <com.example.affirmations.uikit.priceitem.PriceItemView
             android:id="@+id/product_item_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

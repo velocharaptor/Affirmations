@@ -9,13 +9,12 @@
         android:padding="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <TextView
         android:id="@+id/catalog_text"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="catalog"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/catalog_image"

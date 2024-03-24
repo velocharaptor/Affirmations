@@ -18,7 +18,7 @@ class SettingsItemView @JvmOverloads constructor(
     private val textView: TextView
     @SuppressLint("UseSwitchCompatOrMaterialCode")
     private val switch: MaterialSwitch
-    private var data: SettingsItem? = null
+    private var settingsItem: SettingsItem? = null
 
     init {
         LayoutInflater.from(context).inflate(R.layout.settings_item, this)
@@ -29,16 +29,16 @@ class SettingsItemView @JvmOverloads constructor(
         textView = findViewById(R.id.settings_title)
         switch = findViewById(R.id.setting_switch)
         switch.setOnCheckedChangeListener { buttonView, isChecked ->
-            data?.let { settingItem ->
-                settingItem.action.invoke(settingItem.key, !settingItem.isEnabled)
+            settingsItem?.let { setting ->
+                setting.action.invoke(setting.key, !setting.isEnabled)
             }
         }
     }
 
     @RecyclerItemStateBinder
-    fun bindState(settingsItem: SettingsItem) {
-        this.data = settingsItem
-        textView.text = settingsItem.title
-        switch.isChecked = settingsItem.isEnabled
+    fun bindState(state: SettingsItem) {
+        settingsItem = state
+        textView.text = state.title
+        switch.isChecked = state.isEnabled
     }
 }

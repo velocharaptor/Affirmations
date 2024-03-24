@@ -3,9 +3,7 @@ package com.example.affirmations.uikit.productitem
 import com.detmir.recycli.adapters.RecyclerItem
 import com.detmir.recycli.annotations.RecyclerItemState
 import com.example.affirmations.uikit.button.ButtonItem
-import com.example.affirmations.uikit.discountprice.DiscountPriceItem
-
-import kotlinx.parcelize.Parcelize
+import com.example.affirmations.uikit.priceitem.PriceItem
 
 @RecyclerItemState
 data class ProductItem(
@@ -15,10 +13,8 @@ data class ProductItem(
     val description: String,
     val price: String,
     val button: ButtonItem,
-    val priceDiscountTitle: DiscountPriceItem? = null,
-    val backgroundColor: Int? = null,
-    val discountPrice: String? = null,
-    val toProductCard : (data: ProductItem) -> Unit,
+    val priceView: PriceItem? = null,
+    val toProductCard: (data: ProductItem) -> Unit,
 ) : RecyclerItem {
     override fun provideId() = id
 }
